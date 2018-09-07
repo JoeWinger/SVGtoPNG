@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<!--
+   Convert your SVG files to PNGs. You can also determine the dimensions of the output PNG.
+   Joe Winger, Septempter 2018
+-->
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>SVG to PNG</title>
+   <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet'>
+   <link rel='stylesheet' href='main.css'>
+</head>
+
+<body>
+   <h1>SVG to PNG</h1>
+
+   <input type='file' id='input' onchange='onUpload()' accept='image/svg+xml'>
+
+   <img id='preview' src='placeholder.png' />
+   <!--placeholder.png is a transparent PNG; If I don't declare a src attribute here then the actual placeholder won't render until the window is resized (no clue why lol) -->
+   Dimensions
+   <span>
+      <input type='number' id='pngWidth' onchange='widthChange()'>
+      <input type='number' id='pngHeight' onchange='heightChange()'>
+   </span>
+   <br>
+   <button onclick='downloadPng()'>
+      <img src='download.svg' alt="Download">
+   </button>
+
+   <canvas style="display: none;"></canvas>
+   <script src='main.js'></script>
+</body>
+
+</html>
